@@ -1,13 +1,12 @@
 PImage img;
-int mode = 0;
+int mode = 3;//Start in display orignal image option
 color [] colors = {color(255,0,0),color(0,255,0),color(0,0,255),color(255,255,255),color(0,0,0)};//Red,blue,green,white,black
-
 int count[] = new int[5];
 
 void setup() 
 {
-  size(500, 500);
   img = loadImage("pic.jpg");
+  size(img.width, img.height);
   amount();
 }
 
@@ -16,7 +15,7 @@ void draw()
   background(100);
   switch(mode)
   {
-    case 0://Bar chart
+    case 1://Bar chart
     {
       float barWidth = width / (float) colors.length;
       int maxIndex = maxIndex(count);
@@ -37,7 +36,7 @@ void draw()
     }//End case 0
    
     
-    case 1:
+    case 2://Sort Pixels
     {
       int next = 0;
       int printed = 0;
@@ -52,6 +51,10 @@ void draw()
       }
       updatePixels();
       break;
+    }
+    case 3://Orignal image
+    {
+       image(img, 0, 0);
     }
     
   }
@@ -102,22 +105,22 @@ void amount()
         count[3]++;
       }
       //Red
-      if(r>=200)
+      else if(r>=200)
       {
         count[0]++;
       }
       //Green
-      if(g >= 200)
+      else if(g >= 200)
       {
         count[1]++;
       }
       //Blue
-      if(b>= 200)
+      else if(b>= 200)
       {
         count[2]++;
       }
       //Black
-      if(r < 50 && g<50 && b<50)
+      else if(r < 50 && g<50 && b<50)
       {
         count[4]++;
       }        
