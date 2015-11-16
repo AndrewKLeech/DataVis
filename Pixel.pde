@@ -148,7 +148,7 @@ void setup()
   img = loadImage("pic3.png");
   size(img.width, img.height);
   amount();
-}
+}//End setup()
 
 void draw() 
 {
@@ -178,7 +178,9 @@ void draw()
     
     case 2://Sort Pixels
     {
+      //next is for going through the colors array
       int next = 0;
+      //printed keeps track of the pixel position
       int printed = 0;
       for(int i = 0; i<img.pixels.length; i++)
       {
@@ -186,15 +188,15 @@ void draw()
         if(count[next]>0)
         {
           pixels[i]=colors[next];
-        }
+        }//End if
         //When all pixels of color[next] is printed move to next color by increasing next by 1
         if(i-printed>count[next] && next<count.length-1)
         {
           //Change printed to next pixel start point
           printed = printed + count[next];
           next++;
-        }
-      }
+        }//End if
+      }//End for
       updatePixels();
       break;
     }//End case 2 Sort Pixels
@@ -230,6 +232,7 @@ void keyPressed()
   }
 }
 
+//Count amount of pixels for each color
 void amount()
 {
   loadPixels(); 
@@ -241,17 +244,9 @@ void amount()
     {
       //Get location of pixel
       int loc = x + y*width;
-      
-      //Get RGB values
-      float r = red(img.pixels[loc]);
-      float g = green(img.pixels[loc]);
-      float b = blue(img.pixels[loc]);
-      //Put values into p
-      color p = color(r,g,b);
-      
       for(int i = 0; i<colors.length; i++)
       {
-        if(p == colors[i])
+        if(img.pixels[loc] == colors[i])
         {
           count[i]++;
         }//End if
