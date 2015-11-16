@@ -141,7 +141,7 @@ color [] colors = {
                    /*137 white smoke*/           color(245,245,245),
                    /*138 white*/                 color(255,255,255)
                    };
-int count[] = new int[139];
+int count[] = new int[colors.length];
 
 void setup() 
 {
@@ -155,7 +155,7 @@ void draw()
   background(100);
   switch(mode)
   {
-    case 1://Bar chart
+    case 1://Bar Chart
     {
       float barWidth = width / (float) colors.length;
       int maxIndex = maxIndex(count);
@@ -173,7 +173,7 @@ void draw()
         rect(x, height, barWidth - 1, - y);
       }//End for
       break;
-    }//End case 0
+    }//End case 1 Bar Chart
    
     
     case 2://Sort Pixels
@@ -182,22 +182,29 @@ void draw()
       int printed = 0;
       for(int i = 0; i<img.pixels.length; i++)
       {
-        pixels[i]=colors[next];
+        //If there is an instance of this color print
+        if(count[next]>0)
+        {
+          pixels[i]=colors[next];
+        }
+        //When all pixels of color[next] is printed move to next color by increasing next by 1
         if(i-printed>count[next] && next<count.length-1)
         {
+          //Change printed to next pixel start point
           printed = printed + count[next];
           next++;
         }
       }
       updatePixels();
       break;
-    }
-    case 3://Orignal image
+    }//End case 2 Sort Pixels
+    
+    case 3://Display Orignal Image
     {
        image(img, 0, 0);
-    }
-  }
-}
+    }//End case 3 Display Orignal Image
+  }//End switch(mode)
+}//End draw
 
 int maxIndex(int[] count)
 {
@@ -216,36 +223,39 @@ int maxIndex(int[] count)
 
 void keyPressed()
 {
+  //Change mode
   if (key >= '0' && key <='9')
   {
     mode = key - '0';
   }
-  println(mode);
 }
 
 void amount()
 {
   loadPixels(); 
   img.loadPixels(); 
+  //Cycle through y and x coordinates
   for (int y = 0; y < height; y++) 
   {
     for (int x = 0; x < width; x++) 
     {
+      //Get location of pixel
       int loc = x + y*width;
       
       //Get RGB values
       float r = red(img.pixels[loc]);
       float g = green(img.pixels[loc]);
       float b = blue(img.pixels[loc]);
-      
+      //Put values into p
       color p = color(r,g,b);
+      
       for(int i = 0; i<colors.length; i++)
       {
         if(p == colors[i])
         {
           count[i]++;
-        }
-      }
-    }//End for
-  }//End for
-}
+        }//End if
+      }//End for i
+    }//End for x
+  }//End for y
+}//End amount()
