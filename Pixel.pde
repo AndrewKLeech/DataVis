@@ -1,5 +1,8 @@
+import controlP5.*;
+
+ControlP5 cp5;
 PImage img;
-int mode = 3;//Start in display orignal image option
+int mode = 2;//Start in display orignal image option
 color [] colors = {
                    /*0 maroon*/                  color(128,0,0),
                    /*1 dark red*/                color(139,0,0),
@@ -142,20 +145,44 @@ color [] colors = {
                    /*138 white*/                 color(255,255,255)
                    };
 int count[] = new int[colors.length];
-
+int msc = 0;//remove
+int yes = 0;//remove
 void setup() 
 {
-  img = loadImage("pic3.png");
+  img = loadImage("pic5.png");
   size(img.width, img.height);
   amount();
+  //Menu
+  float menuHeight = img.height * 0.05f;
+  cp5 = new ControlP5(this);
+  ButtonBar b = cp5.addButtonBar("bar")
+     .setPosition(0, 0)
+     .setSize(img.width, (int)menuHeight)
+     .addItems(split("a b c"," "))
+     ;
+     println(b.getItem("a"));
+  b.changeItem("a","text","Bar Chart");
+  b.changeItem("b","text","Pixel Sort");
+  b.changeItem("c","text","Image");
+  b.onMove(new CallbackListener()
+  {
+    public void controlEvent(CallbackEvent ev) 
+    {
+      ButtonBar bar = (ButtonBar)ev.getController();
+    }
+  });
 }//End setup()
+
+void bar(int n) {
+  mode = n;
+}
 
 void draw() 
 {
   background(100);
   switch(mode)
   {
-    case 1://Bar Chart
+    case 0://Bar Chart
     {
       float barWidth = width / (float) colors.length;
       int maxIndex = maxIndex(count);
@@ -174,9 +201,8 @@ void draw()
       }//End for
       break;
     }//End case 1 Bar Chart
-   
     
-    case 2://Sort Pixels
+    case 1://Sort Pixels
     {
       //next is for going through the colors array
       int next = 0;
@@ -201,7 +227,7 @@ void draw()
       break;
     }//End case 2 Sort Pixels
     
-    case 3://Display Orignal Image
+    case 2://Display Orignal Image
     {
        image(img, 0, 0);
     }//End case 3 Display Orignal Image
@@ -218,10 +244,10 @@ int maxIndex(int[] count)
     {
       max = count[i];
       maxIndex = i;
-    }
-  }
+    }//End if
+  }//End for
   return maxIndex;
-}
+}//End maxIndex()
 
 void keyPressed()
 {
@@ -229,8 +255,8 @@ void keyPressed()
   if (key >= '0' && key <='9')
   {
     mode = key - '0';
-  }
-}
+  }//End if
+}//End keyPressed()
 
 //Count amount of pixels for each color
 void amount()
@@ -244,6 +270,7 @@ void amount()
     {
       //Get location of pixel
       int loc = x + y*width;
+      yes=0;
       for(int i = 0; i<colors.length; i++)
       {
         if(img.pixels[loc] == colors[i])
@@ -253,4 +280,5 @@ void amount()
       }//End for i
     }//End for x
   }//End for y
+  println(msc);
 }//End amount()
