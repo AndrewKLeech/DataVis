@@ -152,13 +152,20 @@ void setup()
   img = loadImage("pic5.png");
   size(img.width, img.height);
   amount();
-  //Menu
+  //Menu size and color
   float menuHeight = img.height * 0.05f;
+  color idle = color(255,0,0,50);
+  color hover = color(0,0,200,50);
+  color clicked = color(90,50,255,125);
+  //Menu set up
   cp5 = new ControlP5(this);
   ButtonBar b = cp5.addButtonBar("bar")
      .setPosition(0, 0)
      .setSize(img.width, (int)menuHeight)
      .addItems(split("a b c"," "))
+     .setColorForeground(idle) 
+     .setColorBackground(hover)
+     .setColorActive(clicked)
      ;
      println(b.getItem("a"));
   b.changeItem("a","text","Bar Chart");
