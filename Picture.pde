@@ -147,10 +147,12 @@ class Picture
   int maxIndex;
   float max;
   float scale;
+  int run;
   
   Picture(String file)
   {
       img = loadImage(file);
+      run = 0;
   }//End Picture()
   
   void barChart()
@@ -205,24 +207,28 @@ class Picture
   //Count amount of pixels for each color
   void amount()
   {
-    loadPixels(); 
-    img.loadPixels(); 
-    //Cycle through y and x coordinates
-    for (int y = 0; y < height; y++) 
+    if(run == 0)
     {
-      for (int x = 0; x < width; x++) 
+      loadPixels(); 
+      img.loadPixels(); 
+      //Cycle through y and x coordinates
+      for (int y = 0; y < height; y++) 
       {
-        //Get location of pixel
-        int loc = x + y*width;
-        for(int i = 0; i<colors.length; i++)
+        for (int x = 0; x < width; x++) 
         {
-          if(img.pixels[loc] == colors[i])
+          //Get location of pixel
+          int loc = x + y*width;
+          for(int i = 0; i<colors.length; i++)
           {
-            count[i]++;
-          }//End if
-        }//End for i
-      }//End for x
-    }//End for y
+            if(img.pixels[loc] == colors[i])
+            {
+              count[i]++;
+            }//End if
+          }//End for i
+        }//End for x
+      }//End for y
+      run = 1;
+    }//End if
   }//End amount()
 void imageChosen( File f )
 {
