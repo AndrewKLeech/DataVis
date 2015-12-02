@@ -152,7 +152,7 @@ class Picture
   {
       img = loadImage(file);
       amount();
-  }
+  }//End Picture()
   
   void barChart()
   {
@@ -171,7 +171,7 @@ class Picture
         fill(colors[i]);        
         rect(x, height, barWidth - 1, - y);
       }//End for
-  }
+  }//End barChart
   void pixelSort()
   {
     //next is for going through the colors array
@@ -194,13 +194,13 @@ class Picture
       }//End if
     }//End for
     updatePixels();
-    
-  }
+  }//End pixelSort()
   
   void showPicture()
   {
     image(img, 0, 0);
-  }
+  }//End showPicture()
+  
   //Count amount of pixels for each color
   void amount()
   {
@@ -224,6 +224,5 @@ class Picture
     }//End for y
   }//End amount()
 }//End class
-
       
   
