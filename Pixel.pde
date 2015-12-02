@@ -9,7 +9,11 @@ void setup()
 {
   Picture pic = new Picture("pic4.png");
   pictures.add(pic);
+  pic = new Picture("pic5.png");
+  pictures.add(pic);
   pic = new Picture("pic2.jpg");
+  pictures.add(pic);
+  pic = new Picture("pic3.png");
   pictures.add(pic);
   size(pictures.get(0).img.height, pictures.get(0).img.width);
   frame.setResizable(true);

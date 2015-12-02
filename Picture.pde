@@ -151,11 +151,11 @@ class Picture
   Picture(String file)
   {
       img = loadImage(file);
-      amount();
   }//End Picture()
   
   void barChart()
   {
+      amount();
       barWidth = width / (float) colors.length;
       maxIndex = maxIndex(count);
       max = count[maxIndex];
@@ -174,6 +174,7 @@ class Picture
   }//End barChart
   void pixelSort()
   {
+    amount();
     //next is for going through the colors array
     int next = 0;
     //printed keeps track of the pixel position
@@ -223,6 +224,13 @@ class Picture
       }//End for x
     }//End for y
   }//End amount()
+void imageChosen( File f )
+{
+  if( f.exists() )
+  {
+     img = loadImage( f.getAbsolutePath() ); 
+  }
+}
 }//End class
       
   
