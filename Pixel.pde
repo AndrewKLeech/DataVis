@@ -35,7 +35,6 @@ void setup()
      .setColorBackground(hover)
      .setColorActive(clicked)
      ;
-     println(b.getItem("a"));
   b.changeItem("a","text","Bar Chart");
   b.changeItem("b","text","Pixel Sort");
   b.changeItem("c","text","Image");
@@ -49,7 +48,6 @@ void setup()
   //DropDown menu set up
   cp5 = new ControlP5(this);
   List l = Arrays.asList("Pic 1", "Pic 2", "Pic 3", "Pic 4");
-  /* add a ScrollableList, by default it behaves like a DropdownList */
   cp5.addScrollableList("select")
      .setPosition(width-dropDownWidth, 0)
      .setSize((int)dropDownWidth, 100)
@@ -59,13 +57,12 @@ void setup()
      .setColorForeground(idle) 
      .setColorBackground(hover)
      .setColorActive(clicked)
-     // .setType(ScrollableList.LIST) // currently supported DROPDOWN and LIST
      ;
 }//End setup()
 
 void select(int n) 
 {
-  /* request the selected item based on index n */
+  //request the selected item based on index n
   imageInUse = n;
   println(n);
 }//End select()
@@ -105,17 +102,6 @@ void draw()
     }//End case 2 Display Orignal Image
   }//End switch(mode)
 }//End draw
-
-
-
-void keyPressed()
-{
-  //Change mode
-  if (key >= '0' && key <='9')
-  {
-    mode = key - '0';
-  }//End if
-}//End keyPressed()
 
 int maxIndex(int[] count)
 {
