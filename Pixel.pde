@@ -11,12 +11,11 @@ void setup()
   pictures.add(pic);
   pic = new Picture("pic5.png");
   pictures.add(pic);
-  pic = new Picture("pic2.jpg");
+  pic = new Picture("pic.jpg");
   pictures.add(pic);
   pic = new Picture("pic3.png");
   pictures.add(pic);
-  size(pictures.get(0).img.height, pictures.get(0).img.width);
-  frame.setResizable(true);
+  size(pictures.get(0).img.width, pictures.get(0).img.height);
   
   //Menu size and color
   float menuHeight = 500/*change to image height*/ * 0.05f;
@@ -62,9 +61,7 @@ void setup()
 
 void select(int n) 
 {
-  //request the selected item based on index n
   imageInUse = n;
-  println(n);
 }//End select()
 
 void bar(int n) 
@@ -92,12 +89,6 @@ void draw()
     case 2://Display Orignal Image
     {
       pictures.get(imageInUse).showPicture();
-      break;
-    }//End case 2 Display Orignal Image
-    
-    case 3://Display Orignal Image
-    {
-      frame.setSize(600, 600);
       break;
     }//End case 2 Display Orignal Image
   }//End switch(mode)

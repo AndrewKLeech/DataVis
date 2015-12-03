@@ -7,8 +7,8 @@ class Picture
   int maxIndex;
   float max;
   float scale;
-  boolean run = false;
-  boolean run2 = false;
+  boolean ranAmount = false;
+  boolean ranGetColors = false;
   
   Picture(String file)
   {
@@ -71,7 +71,7 @@ class Picture
   //Count amount of pixels for each color
   void amount()
   {
-    if(run != true)
+    if(ranAmount != true)
     {
       loadPixels(); 
       img.loadPixels(); 
@@ -91,7 +91,7 @@ class Picture
           }//End for i
         }//End for x
       }//End for y
-      run = true;
+      ranAmount = true;
       }//End if
   }//End amount()
   
@@ -99,7 +99,7 @@ class Picture
   
   void getColors()
   {
-    if(run2 != true)
+    if(ranGetColors != true)
     {
       loadPixels(); 
       img.loadPixels(); 
@@ -126,8 +126,9 @@ class Picture
           }
         }//End for x
       }//End for y
-      run2 = true;
+      ranGetColors = true;
       }//End if
+      colors = sort(colors);
   }//End getColors()
 }//End class
       

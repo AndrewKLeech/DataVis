@@ -2,7 +2,7 @@
 Repository for OOP assignment for data visualization 
 
 About:
-This program reads in four jpg or png files that contains 139 different colors.
+This program reads in four jpg or png files and looks at the pixels of each.
 The final version of this program should inlcude a image file which will have more colors in it.
 
 It has three modes:
@@ -14,5 +14,4 @@ It has three modes:
 3/ Display orignal image
 
 
-These modes are still to be updated such as showing the amount of pixels of each color on the bar chart and fixing minor
-issues with the pixel sort.
+These modes are still to be updated such as showing the amount of pixels of each color on the bar chart.
