@@ -19,20 +19,31 @@ These modes are still to be updated such as showing the amount of pixels of each
 
 
 MENU:
+
 ![Image of Menu](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/menu.PNG)
 
 PICTURE 1:
+
 ![Image of Image 1](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/image1.PNG)
+
 PIXEL SORT:
+
 ![Image of Pixel Sort 1](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/PixelSort1.PNG)
+
 BAR CHART:
+
 ![Image of Bar Chart 1](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/Barchart1.PNG)
 
 PICTURE 2:
+
 ![Image of Image 2](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/image2.PNG)
+
 PIXEL SORT:
+
 ![Image of Pixel Sort 2](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/PixelSort2.PNG)
+
 BAR CHART:
+
 ![Image of Bar Chart 2](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/Barchart2.PNG)
 
 
