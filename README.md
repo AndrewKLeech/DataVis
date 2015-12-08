@@ -37,16 +37,26 @@ BAR CHART:
 
 
 PICTURE 3:
+
 ![Image of Image 3](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/image3.png)
+
 PIXEL SORT:
+
 ![Image of Pixel Sort 3](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/PixelSort3.PNG)
+
 BAR CHART:
+
 ![Image of Bar Chart 3](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/Barchart3.PNG)
 
 
 PICTURE 4:
+
 ![Image of Image 4](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/Image4.PNG)
+
 PIXEL SORT:
+
 ![Image of Pixel Sort 4](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/PixelSort4.PNG)
+
 BAR CHART:
+
 ![Image of Bar Chart 4](https://raw.githubusercontent.com/AndrewKLeech/DataVis/master/Images%20for%20README/Barchart4.PNG)
