@@ -1,29 +1,37 @@
 class Picture
 {
   PImage img;
-  int [] colors = new int[1];
-  int count[] = new int[colors.length];
+  int [] colors;
+  int count[];
   float barWidth;
   int maxIndex;
   float max;
   float scale;
-  boolean ranAmount = false;
-  boolean ranGetColors = false;
+  boolean ranAmount;
+  boolean ranGetColors;
   
   Picture(String file)
   {
       img = loadImage(file);
+      colors = new int[1];
+      count = new int[colors.length];
+      ranAmount = false;
+      ranGetColors = false;
+      
   }//End Picture()
   
   void barChart()
   {
       getColors();
       amount();
+      
+      //Bar Chart Set Up
       barWidth = width / (float) colors.length;
       maxIndex = maxIndex(count);
       max = count[maxIndex];
       scale = height / max;
       barWidth = width / (float) colors.length;
+      
       //Print bars
       for (int i = 0 ; i < colors.length ; i ++)
       {

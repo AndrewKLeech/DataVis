@@ -7,6 +7,7 @@ int mode = 2;//Start in display orignal image option
 int imageInUse = 0;
 void setup() 
 {
+  //Load data(image files)
   Picture pic = new Picture("pic1.png");
   pictures.add(pic);
   pic = new Picture("pic2.png");
@@ -24,6 +25,7 @@ void setup()
   color clicked = color(90,50,255,125);
   float dropDownWidth = width/*change to image width*/ * 0.1f;
   float buttonBarWidth = width/*change to image width*/ - dropDownWidth;
+  
   //ButtonBar set up
   cp5 = new ControlP5(this);
   ButtonBar b = cp5.addButtonBar("bar")
@@ -44,6 +46,7 @@ void setup()
       ButtonBar bar = (ButtonBar)ev.getController();
     }
   });
+  
   //DropDown menu set up
   cp5 = new ControlP5(this);
   List l = Arrays.asList("Pic 1", "Pic 2", "Pic 3", "Pic 4");
@@ -59,11 +62,13 @@ void setup()
      ;
 }//End setup()
 
+//Get drop down list item selected
 void select(int n) 
 {
   imageInUse = n;
 }//End select()
 
+//Get button pressed
 void bar(int n) 
 {
   mode = n;
@@ -72,6 +77,8 @@ void bar(int n)
 void draw() 
 {
   background(100);
+  
+  //Switch for button pressed
   switch(mode)
   {
     case 0://Bar Chart
