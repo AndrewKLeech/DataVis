@@ -7,13 +7,13 @@ int mode = 2;//Start in display orignal image option
 int imageInUse = 0;
 void setup() 
 {
-  Picture pic = new Picture("pic4.png");
+  Picture pic = new Picture("pic1.png");
   pictures.add(pic);
-  pic = new Picture("pic5.png");
+  pic = new Picture("pic2.png");
   pictures.add(pic);
-  pic = new Picture("pic.jpg");
+  pic = new Picture("pic3.jpg");
   pictures.add(pic);
-  pic = new Picture("pic3.png");
+  pic = new Picture("pic4.png");
   pictures.add(pic);
   size(pictures.get(0).img.width, pictures.get(0).img.height);
   

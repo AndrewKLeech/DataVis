@@ -17,6 +17,7 @@ class Picture
   
   void barChart()
   {
+      getColors();
       amount();
       barWidth = width / (float) colors.length;
       maxIndex = maxIndex(count);
